@@ -1,23 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import UserQuery from './userQuery';
+import UseEffectHook from './useEffectHook';
+// import UserQueryWithClassComponent from './userQueryWithClass';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="container">
+      <header className="">
+        <h1 className="m-b-50">React Hook Examples</h1>
+        <UserQuery />
+        <UseEffectHook />
+        {/* <UserQueryWithClassComponent /> */}
       </header>
     </div>
   );
