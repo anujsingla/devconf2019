@@ -1,10 +1,11 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import UserQuery from './userQuery';
-import UseEffectHook from './useEffectHook';
-// import UserQueryWithClassComponent from './userQueryWithClass';
+import UseEffectHookForWeather from './useEffectHookForWeather';
+import UseEffectHookTopNews from './useEffectHookTopNews';
+// import TopNewsWithCustomHook from './TopNewsWithCustomHook';
+// import CustomHookForWeather from './CustomHookForWeather';
 
 function App() {
   return (
@@ -12,7 +13,12 @@ function App() {
       <header className="">
         <h1 className="m-b-50">React Hook Examples</h1>
         <UserQuery />
-        <UseEffectHook />
+        <hr />
+        <UseEffectHookForWeather />
+        <hr />
+        <UseEffectHookTopNews />
+        {/* <TopNewsWithCustomHook />
+        <CustomHookForWeather /> */}
         {/* <UserQueryWithClassComponent /> */}
       </header>
     </div>

@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef, useCallback} from 'react';
 
-export default function UseEffectHook () {
+export default function UseEffectHookForWeather () {
     const inputEl = useRef();
     const [city, setCity] = useState('Delhi');
     const [weatherDetails, setWeatherDetails] = useState({
@@ -26,7 +26,6 @@ export default function UseEffectHook () {
     }
 
     const fetchData = useCallback(async () => {
-        console.log('city');
         const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5823e9e2ea703a25fd4ef33f5f2cff8d`)
          return response.json();
     }, [city]);
