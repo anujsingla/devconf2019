@@ -2,7 +2,7 @@ import React, {useState, useRef, useContext } from 'react';
 import { newMessage } from './reducer';
 import { CommentContext } from './AppCommentWithUseContext';
 
-export function PublishMessage() {
+export function PublishComment() {
     // const {dispatch} = props;
     const {dispatch}= useContext(CommentContext);
     const [text, setText] = useState('');
@@ -12,7 +12,7 @@ export function PublishMessage() {
         setText(textInput.current.value);
     }
 
-    const publishMessage = () => {
+    const publishComment = () => {
         dispatch(newMessage(text));
     }
 
@@ -21,7 +21,7 @@ export function PublishMessage() {
             <div className="form-group mx-sm-3 mb-2">
                 <input className="form-control form-control-sm" value={text} type="text" ref={textInput} onChange={updateText} />
             </div>
-            <button className="btn btn-primary mb-2" onClick={publishMessage}>Add Comment</button>
+            <button className="btn btn-primary mb-2" onClick={publishComment}>Add Comment</button>
         </div>
       );
 }

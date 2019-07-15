@@ -2,9 +2,9 @@ import React, {useContext} from 'react';
 import { CommentContext } from './AppCommentWithUseContext';
 
 
-export function MessageBoard() {
-    // const { messages } = props;
-    const {state: {messages}}= useContext(CommentContext);
+export function ShowComment() {
+    // const { comment } = props;
+    const {state: {comment}}= useContext(CommentContext);
     return (
         <div className="card">
             <div className="card-header">
@@ -13,7 +13,7 @@ export function MessageBoard() {
             <div className="card-body">
                 <ul className="list-group list-group-flush">
                     {
-                        messages && messages.map((messageItem) => {
+                        comment && comment.map((messageItem) => {
                             const {id, text} = messageItem;
                             return <li key={id} className="list-group-item">{text}</li>
                         })

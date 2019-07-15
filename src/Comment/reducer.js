@@ -9,13 +9,13 @@ export const newMessage = (text) => {
     }
 }
 
-export const initialState = {messages: []};
+export const initialState = {comment: []};
 
 const reducer = (state, action) => {
     switch(action.type) {
         case POST_COMMENT:
             return {
-                ...state, messages: [...state.messages, action.item]
+                ...state, comment: [...state.comment, action.item]
             }
         default:
             return state;

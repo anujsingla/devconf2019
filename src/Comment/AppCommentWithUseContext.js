@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import reducer, {initialState} from './reducer';
-import { PublishMessage } from './PublishMessage';
-import { MessageBoard } from './MessageBoard';
+import { PublishComment } from './PublishComment';
+import { ShowComment } from './ShowComment';
 
 // here we can pass default value to the context
 export const CommentContext = React.createContext();
@@ -14,9 +14,9 @@ export function AppCommentWithUseContext() {
             <div>
                 <h2>User Comment</h2>
                 <hr/>
-                <PublishMessage />
+                <PublishComment />
                 <hr/>
-                <MessageBoard />
+                <ShowComment />
             </div>
         </CommentContext.Provider>
     )
