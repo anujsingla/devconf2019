@@ -16,7 +16,7 @@ export default function UseEffectHookTopNews () {
     }
 
     const fetchData = useCallback(async () => {
-        const response = await fetch(`https://newsapi.org/v2/everything?q=${newsType}&from=2019-06-04&sortBy=publishedAt&apiKey=f02b2a0ecd7a4e41977d296648ad94b7`)
+        const response = await fetch(`https://newsapi.org/v2/everything?q=${newsType}&sortBy=publishedAt&apiKey=f02b2a0ecd7a4e41977d296648ad94b7`)
          return response.json();
     }, [newsType]);
 
