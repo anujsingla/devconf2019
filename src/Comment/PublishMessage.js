@@ -1,5 +1,5 @@
 import React, {useState, useRef, useContext } from 'react';
-import {newMessage} from './actions';
+import { newMessage } from './reducer';
 import { CommentContext } from './AppCommentWithUseContext';
 
 export function PublishMessage() {

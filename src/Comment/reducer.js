@@ -1,10 +1,19 @@
-import { NEW_MESSAGE } from './types';
+import uuid from 'uuid/v4';
+
+export const POST_COMMENT = 'POST_COMMENT';
+
+export const newMessage = (text) => {
+    return {
+        type: POST_COMMENT,
+        item: {text, id: uuid()}
+    }
+}
 
 export const initialState = {messages: []};
 
 const reducer = (state, action) => {
     switch(action.type) {
-        case NEW_MESSAGE:
+        case POST_COMMENT:
             return {
                 ...state, messages: [...state.messages, action.item]
             }
