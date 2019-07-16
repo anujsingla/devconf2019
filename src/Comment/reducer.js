@@ -2,6 +2,7 @@ import uuid from 'uuid/v4';
 
 export const POST_COMMENT = 'POST_COMMENT';
 
+// action
 export const newMessage = (text) => {
     return {
         type: POST_COMMENT,
@@ -23,3 +24,4 @@ const reducer = (state, action) => {
 }
 
 export default reducer;
+  
