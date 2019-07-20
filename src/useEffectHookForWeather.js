@@ -1,7 +1,6 @@
-import React, {useState, useEffect, useRef, useCallback} from 'react';
+import React, {useState, useEffect} from 'react';
 
 export default function UseEffectHookForWeather () {
-    const inputEl = useRef();
     const [city, setCity] = useState('Delhi');
     const [weatherDetails, setWeatherDetails] = useState({
         temperature: 20,
@@ -10,9 +9,9 @@ export default function UseEffectHookForWeather () {
         country: ''
     });
     
-    const updateCountry = () => {
-        setCity(inputEl.current.value);
-    }
+    const updateCountry = event => {
+        setCity(event.target.value);
+    };
 
     const loadData = async () => {
         const data = await fetchData();
@@ -25,10 +24,10 @@ export default function UseEffectHookForWeather () {
         })
     }
 
-    const fetchData = useCallback(async () => {
+    const fetchData = async () => {
         const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5823e9e2ea703a25fd4ef33f5f2cff8d`)
          return response.json();
-    }, [city]);
+    };
 
     useEffect(() => {
         fetchData().then((data) => {
@@ -46,7 +45,7 @@ export default function UseEffectHookForWeather () {
             <label className="form-group mx-sm-3 mb-2">Weather Condition for City</label>
             <div className="form-inline">
                 <div className="form-group mx-sm-3 mb-2">
-                    <input className="form-control form-control-sm" value={city} type="text" ref={inputEl} onChange={updateCountry} />
+                    <input className="form-control form-control-sm" value={city} type="text" onChange={updateCountry} />
                 </div>
                 <button className="btn btn-primary mb-2" onClick={loadData}>Search Weather</button>
             </div>

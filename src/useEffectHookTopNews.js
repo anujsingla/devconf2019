@@ -1,30 +1,29 @@
-import React, {useState, useEffect, useRef, useCallback} from 'react';
+import React, {useState, useEffect} from 'react';
 
 export default function UseEffectHookTopNews () {
-    const inputEl = useRef();
     const [newsType, setNewType] = useState('Cricket');
     const [topNews, setTopNews] = useState([]);
 
-    const updateNewsType = () => {
-        setNewType(inputEl.current.value);
+    const updateNewsType = (event) => {
+        setNewType(event.target.value);
     }
 
     const loadData = async () => {
         const data = await fetchData();
-        console.log(data);
         data && setTopNews(data.articles);
     }
 
-    const fetchData = useCallback(async () => {
+    const fetchData = async () => {
         const response = await fetch(`https://newsapi.org/v2/everything?q=${newsType}&sortBy=publishedAt&apiKey=f02b2a0ecd7a4e41977d296648ad94b7`)
-         return response.json();
-    }, [newsType]);
+        return response.json();
+    };
 
     useEffect(() => {
         fetchData().then((data) => {
             console.log(data);
             data && setTopNews(data.articles);
         });
+        return 
     }, []);
 
     return (
@@ -32,7 +31,7 @@ export default function UseEffectHookTopNews () {
             <label className="form-group mx-sm-3 mb-2">Top News</label>
             <div className="form-inline">
                 <div className="form-group mx-sm-3 mb-2">
-                    <input className="form-control form-control-sm" value={newsType} type="text" ref={inputEl} onChange={updateNewsType} />
+                    <input className="form-control form-control-sm" value={newsType} type="text" onChange={updateNewsType} />
                 </div>
                 <button className="btn btn-primary mb-2" onClick={loadData}>Top News</button>
             </div>
@@ -46,9 +45,8 @@ export default function UseEffectHookTopNews () {
                        return <li key={index} className="list-group-item">{news.title}</li> 
                     })}
                     </ul>
-            </div>
+                </div>
             </div>
         </div>
     );
-
 }
