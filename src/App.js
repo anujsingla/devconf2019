@@ -7,7 +7,8 @@ import UseEffectHookTopNews from './useEffectHookTopNews';
 // import { AppComment } from './reaction/AppComment';
 import { AppCommentWithUseContext } from './Comment/AppCommentWithUseContext';
 // import { UseEffectHook } from './UseEffectHook';
-import { UseCallback } from './UseCallback';
+// import { UseCallback } from './UseCallback';
+// import UserQueryWithCustomHook from './UserQueryWithCustomHook';
 // import TopNewsWithCustomHook from './TopNewsWithCustomHook';
 // import CustomHookForWeather from './CustomHookForWeather';
 
@@ -29,8 +30,10 @@ function App() {
         <AppCommentWithUseContext />
         {/* <hr/>
         <UseEffectHook /> */}
-        <hr/>
-        <UseCallback />
+        {/* <hr/>
+        <UseCallback /> */}
+        {/* <hr/> */}
+        {/* <UserQueryWithCustomHook /> */}
       </header>
     </div>
   );
