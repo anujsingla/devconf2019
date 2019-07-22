@@ -5,7 +5,8 @@ import UserQuery from './userQuery';
 import UseEffectHookForWeather from './useEffectHookForWeather';
 import UseEffectHookTopNews from './useEffectHookTopNews';
 // import { AppComment } from './reaction/AppComment';
-import { AppCommentWithUseContext } from './Comment/AppCommentWithUseContext';
+// import { AppCommentWithUseContext } from './Comment/AppCommentWithUseContext';
+import { AppCommentWithLocalState } from './Comment/AppCommentWithLocalState';
 // import { UseEffectHook } from './UseEffectHook';
 // import { UseCallback } from './UseCallback';
 // import UserQueryWithCustomHook from './UserQueryWithCustomHook';
@@ -27,7 +28,8 @@ function App() {
         {/* <UserQueryWithClassComponent /> */}
         <hr />
         {/* <AppComment /> */}
-        <AppCommentWithUseContext />
+        {/* <AppCommentWithUseContext /> */}
+        <AppCommentWithLocalState />
         {/* <hr/>
         <UseEffectHook /> */}
         {/* <hr/>
